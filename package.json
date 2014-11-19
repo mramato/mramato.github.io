@@ -1,0 +1,16 @@
+{
+    "name": "mramato",
+    "version": "1.0.0",
+    "description": "My personal website.",
+    "homepage": "http://mramato.github.io",
+    "repository": {
+        "type": "git",
+        "url": "mramato.github.io"
+    },
+    "devDependencies": {
+        "express": "4.4.4",
+        "compression": "1.0.8",
+        "request": "2.36.0",
+        "yargs": "1.2.6"
+    }
+}
