@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Use correct character set. -->
+  <meta charset="utf-8">
+  <!-- Tell IE to use the latest, best version (or Chrome Frame if pre-IE11). -->
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <!-- Make the application on mobile take up the full browser screen and disable user scaling. -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+  <title>Animated Billboards</title>
+  <script src="Cesium/Cesium.js"></script>
+  <style>
+      @import url(Cesium/Widgets/widgets.css);
+      html, body, #cesiumContainer {
+          width: 100%; height: 100%; margin: 0; padding: 0; overflow: hidden;
+      }
+  </style>
+</head>
+<body>
+  <div id="cesiumContainer"></div>
+  <script>
+	var viewer = new Cesium.Viewer('cesiumContainer');
+
+	var gifs = [
+
+	new Cesium.BillboardAnimator.fromGif({
+		url : 'cheering_minions.gif'
+	}),
+	new Cesium.BillboardAnimator.fromGif({
+		url : 'e8nZC.gif'
+	}),
+	new Cesium.BillboardAnimator.fromGif({
+		url : 'fly.gif'
+	})];
+		
+
+	Cesium.when.all(gifs, function(values){
+	viewer.entities.add({
+		position : Cesium.Cartesian3.fromDegrees(-75.59777, 40.03883),
+		billboard : {
+			image : values[0].image,
+			imageSubRegion : values[0].imageSubRegion,
+			scale : 0.25
+		}
+	});
+		
+	viewer.entities.add({
+		position : Cesium.Cartesian3.fromDegrees(-75.59777, 41.03883),
+		billboard : {
+			image : values[1].image,
+			imageSubRegion : values[1].imageSubRegion,
+			scale : 0.25
+		}
+	});
+		
+	viewer.entities.add({
+		position : Cesium.Cartesian3.fromDegrees(-73.59777, 40.03883),
+		billboard : {
+			image : values[2].image,
+			imageSubRegion : values[2].imageSubRegion,
+			scale : 0.25
+		}
+	});
+			
+		viewer.zoomTo(viewer.entities);
+	});	
+  </script>
+</body>
+</html>
