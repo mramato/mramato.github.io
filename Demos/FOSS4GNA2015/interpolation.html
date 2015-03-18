@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="description" content="Interpolation Demo">
+    <meta name="cesium-sandcastle-labels" content="FOSS4GNA">
+    <title>Cesium Interpolation Demo</title>
+</head>
+<body>
+    <style>
+        @import url(Cesium/Widgets/widgets.css);
+        @import url(style.css);
+    </style>
+    <div id="cesiumContainer" class="fullSize"></div>
+    <div id="toolbar">
+        <button id="linear" class="cesium-button">Linear interpolation</button>
+        <button id="lagrange" class="cesium-button">Lagrange interpolation</button>
+        <button id="hermite" class="cesium-button">Hermine interpolation</button>
+        <button id="viewTieFighter" class="cesium-button">View Tie Fighter</button>
+        <button id="viewPathSide" class="cesium-button">View Path From Side</button>
+        <button id="viewPathTopDown" class="cesium-button">View Path Top Down</button>
+    </div>
+    <script type="text/javascript" src="Cesium/Cesium.js"></script>
+    <script type="text/javascript" src="interpolation.js"></script>
+</body>
+</html>
