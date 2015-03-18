@@ -12,6 +12,9 @@
         baseLayerPicker: false
     });
 
+    //Enable depth testing so things behind the terrain disappear.
+    viewer.scene.globe.depthTestAgainstTerrain = true;
+
     //Set the random number seed for consistent results.
     Cesium.Math.setRandomNumberSeed(3);
 
