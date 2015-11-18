@@ -122,10 +122,10 @@ var toggle = false;
 Sandcastle.addToolbarButton('Toggle Video Overlay', function() {
 	toggle != toggle;
     if(toggle){
-		document.body.appendChild(element);
+		document.body.appendChild(videoElement);
         return;
     }
-	document.body.removeChild(element);
+	document.body.removeChild(videoElement);
 });
 
 // Older browsers do not support WebGL video textures,
