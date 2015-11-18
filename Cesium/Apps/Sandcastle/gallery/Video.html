@@ -120,7 +120,7 @@ var toggle = false;
 // Like Image, the video element doesn't have to be part of the DOM or
 // otherwise on the screen to be used as a texture.
 Sandcastle.addToolbarButton('Toggle Video Overlay', function() {
-	toggle != toggle;
+	toggle = !toggle;
     if(toggle){
 		document.body.appendChild(videoElement);
         return;
