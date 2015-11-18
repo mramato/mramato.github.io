@@ -63,7 +63,7 @@ function loadVideo() {
 
 var viewer = new Cesium.Viewer('cesiumContainer', {showRenderLoopErrors : false});
 
-var videoElement = document.getElementById('trailer');
+var videoElement = loadVideo();
 
 var sphere = viewer.entities.add({
     position : Cesium.Cartesian3.fromDegrees(-79, 39, 1000),
