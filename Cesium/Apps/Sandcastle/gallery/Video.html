@@ -40,6 +40,7 @@ function startup(Cesium) {
 
 function loadVideo() {
     var element = document.createElement('video');
+	element.id = 'trailer';
     element.setAttribute('loop', true);
     element.setAttribute('autoplay', true);
 
@@ -115,14 +116,16 @@ sphere.ellipsoid.material.repeat = new Cesium.CallbackProperty(function(time, re
     return result;
 }, false);
 
+var toggle = false;
 // Like Image, the video element doesn't have to be part of the DOM or
 // otherwise on the screen to be used as a texture.
 Sandcastle.addToolbarButton('Toggle Video Overlay', function() {
-    if(videoElement.style.display === 'none'){
-        videoElement.style.display = '';
+	toggle != toggle;
+    if(toggle){
+		document.body.appendChild(element);
         return;
     }
-    videoElement.style.display = 'none';
+	document.body.removeChild(element);
 });
 
 // Older browsers do not support WebGL video textures,
